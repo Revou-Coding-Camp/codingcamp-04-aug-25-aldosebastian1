@@ -1,53 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
-    <link rel="stylesheet" href="./CSS/style.css">
-</head>
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="header">
-            <h1>Todo List</h1>
+      <div class="header">
+        <h1>Daftar Tugas</h1>
+      </div>
+
+      <div class="form-section">
+        <div class="input-row">
+          <input
+            type="text"
+            id="inputTugas"
+            class="todo-input"
+            placeholder="Tambahkan tugas baru..."
+          />
+          <input type="date" id="inputTanggal" class="date-input" />
+          <button class="add-btn" onclick="tambahTugas()">+</button>
         </div>
 
-        <div class="form-section">
-            <div class="input-row">
-                <input type="text" id="todoInput" class="todo-input" placeholder="Add a todo...">
-                <input type="date" id="dateInput" class="date-input">
-                <button class="add-btn" onclick="addTask()">Add</button>
-            </div>
+        <div id="pesanError" class="error-message"></div>
 
-            <div id="errorMessage" class="error-message"></div>
-
-            <div class="controls">
-                <select class="filter-btn" id="filterSelect" onchange="filterTasks()">
-                    <option value="">Filter Tasks</option>
-                    <option value="all">Semua Tasks</option>
-                    <option value="pending">Pending</option>
-                    <option value="completed">Selesai</option>
-                    <option value="overdue">Terlewat</option>
-                </select>
-                <button id="deleteAllBtn" class="delete-all-btn" onclick="deleteAllTasks()">DELETE ALL</button>
-            </div>
-
-            <div class="table-header">
-                <div>TASK</div>
-                <div>DUE DATE</div>
-                <div>STATUS</div>
-                <div>ACTIONS</div>
-            </div>
-
-            <div id="todoList" class="todo-list">
-                <div class="empty-state">No task found</div>
-            </div>
+        <div class="controls">
+          <select class="filter-btn" id="pilihFilter" onchange="filterTugas()">
+            <option value="">Filter Tugas</option>
+            <option value="semua">Semua Tugas</option>
+            <option value="menunggu">Menunggu</option>
+            <option value="selesai">Selesai</option>
+            <option value="terlewat">Terlewat</option>
+          </select>
+          <button
+            id="btnHapusSemua"
+            class="delete-all-btn"
+            onclick="hapusSemuaTugas()"
+          >
+            HAPUS SEMUA
+          </button>
         </div>
+
+        <div class="table-header">
+          <div>TUGAS</div>
+          <div>BATAS WAKTU</div>
+          <div>STATUS</div>
+          <div>AKSI</div>
+        </div>
+
+        <div id="daftarTugas" class="todo-list">
+          <div class="empty-state">Tidak ada tugas</div>
+        </div>
+      </div>
     </div>
-    
-    <script src="./JS/script.js"></script>
-</body>
 
+    <script src="./JS/script.js"></script>
+  </body>
 </html>
