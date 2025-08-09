@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Todo List</h1>
+        </div>
+
+        <div class="form-section">
+            <div class="input-row">
+                <input type="text" id="todoInput" class="todo-input" placeholder="Add a todo...">
+                <input type="date" id="dateInput" class="date-input">
+                <button class="add-btn" onclick="addTask()">+</button>
+            </div>
+
+            <div id="errorMessage" class="error-message"></div>
+
+            <div class="controls">
+                <select class="filter-btn" id="filterSelect" onchange="filterTasks()">
+                    <option value="">Filter Tasks</option>
+                    <option value="all">Semua Tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Selesai</option>
+                    <option value="overdue">Terlewat</option>
+                </select>
+                <button id="deleteAllBtn" class="delete-all-btn" onclick="deleteAllTasks()">DELETE ALL</button>
+            </div>
+
+            <div class="table-header">
+                <div>TASK</div>
+                <div>DUE DATE</div>
+                <div>STATUS</div>
+                <div>ACTIONS</div>
+            </div>
+
+            <div id="todoList" class="todo-list">
+                <div class="empty-state">No task found</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
